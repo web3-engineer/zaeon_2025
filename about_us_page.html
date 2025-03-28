@@ -2,218 +2,473 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>About Us</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Zaeon</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <style>
+        /* Additional styles for the About page */
+        .about-section {
+            padding: 2rem 7%;
+        }
+        
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--main-color);
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+        
+        .team-section {
+            padding: 2rem 7%;
+            background-color: #f9f9f9;
+        }
+        
+        .team-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 5px solid #1E88E5;
+        }
+        
+        .team-member h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--main-color);
+        }
+        
+        .team-member h4 {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-member p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: #1E88E5;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--main-color);
+        }
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        .university-info {
+            padding: 2rem 7%;
+            background-color: #f0f8ff;
+        }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        .campus-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="about_css_s.css" rel="stylesheet">
+        .campus-images img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .campus-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+        }
+
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 3rem 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: #1E88E5;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .location-section {
+            padding: 2rem 7%;
+        }
+
+        .location-map {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Topbar Start -->
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="wrapper">
+            <div class="box-wrap">
+                <div class="box one"></div>
+                <div class="box two"></div>
+                <div class="box three"></div>
+                <div class="box four"></div>
+                <div class="box five"></div>
+                <div class="box six"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <button id="backToTop" style="font-size: 30px; font-weight: bold;">&#8673;</button>
+
+    <!-- Header Starts Here -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/favicon.png" alt="Logo">
+        </a>
+        <!-- Toggle Button (Hamburger) -->
+        <div class="menu-btn" id="menu-btn">
+            <span class="fas fa-bars"></span>
+        </div>
+        <h1 class="site-title">Zaeon</h1>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">About</a>
+            <a href="index.html#menu">Teachers</a>
+            <a href="blog.html">Classrooms</a>
+            <a href="index.html#research">Research</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+        </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="slider"></div>
+            </label>
+            <span id="mode-label">Light Mode</span>
+        </div>
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="Search...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+        <div class="icons login-signup-collection">
+            <button style="max-height: 40px;" id="login-btn" class="auth-btn"><a href="./login/login.html">Login</a></button>
+            <button style="max-height: 40px;" id="login-btn" class="auth-btn"><a href="./signup/signup.html">Sign Up</a></button>
+        </div>
+    </header>
+    <!-- Header Ends Here -->
     
+    <!-- preloader styling js -->
+    <script src="preloader.js"></script>
 
+    <!-- Main Banner Section -->
+    <section class="home" id="home" data-aos="fade-up" data-aos-anchor-placement="top-bottom" style="min-height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="content">
+            <h3>About Zaeon</h3>
+            <p style="color: white; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">A decentralized AI education platform powered by Ethereum, developed at UNILAB to transform learning and sustainable development in Brazil and beyond.</p>
+        </div>
+    </section>
 
-    <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
-        <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">About Us</h1>
-            <div class="d-inline-flex align-items-center text-white">
-                <p class="m-0"><a class="text-white" href="index.html">Home</a></p>
-                <i class="fa fa-circle px-3"></i>
-                <p class="m-0">About Section</p>
+    <!-- About Section Starts -->
+    <section class="about-section" data-aos="fade-up">
+        <h2>Our Project</h2>
+        <p>Zaeon is an innovative decentralized society model implemented on the Ethereum network that leverages artificial intelligence and blockchain technology to revolutionize education, research, and sustainable development. Based at the University for International Integration of the Afro-Brazilian Lusophony (UNILAB), our project aims to bridge technological gaps while promoting inclusivity, transparency, and collaborative learning.</p>
+        
+        <p>Through our platform, we're creating a new paradigm where AI teachers interact with students, researchers develop cutting-edge applications, and communities benefit from decentralized knowledge sharing. Our mission is to democratize access to quality education and technological resources, particularly in underserved regions.</p>
+    </section>
+
+    <!-- University Info Section -->
+    <section class="university-info" data-aos="fade-up">
+        <h2 class="team-title">Our Institution: UNILAB</h2>
+        <p>The University for International Integration of the Afro-Brazilian Lusophony (UNILAB) is a federal public university linked to the Ministry of Education of Brazil. Founded in 2010 and headquartered in Redenção, Ceará, it was established to expand access to higher education while promoting international cooperation, particularly among member states of the Community of Portuguese Language Countries (CPLP), including Angola, Mozambique, Cape Verde, Guinea-Bissau, Portugal, and others.</p>
+        
+        <p>UNILAB has a strong institutional mission focused on intercultural education, democracy, and scientific cooperation. Its campuses bring together Brazilian and international students and faculty, fostering a truly global academic environment. The university operates across four campuses—three in Northeast Brazil and one in the state of Bahia—serving both urban and rural populations within strategic regions for sustainable development.</p>
+
+        <div class="stats-container">
+            <div class="stat-box" data-aos="zoom-in">
+                <h3>4</h3>
+                <p>Campuses</p>
+            </div>
+            <div class="stat-box" data-aos="zoom-in">
+                <h3>275k+</h3>
+                <p>Population Served</p>
+            </div>
+            <div class="stat-box" data-aos="zoom-in">
+                <h3>14</h3>
+                <p>Municipalities</p>
+            </div>
+            <div class="stat-box" data-aos="zoom-in">
+                <h3>2010</h3>
+                <p>Founded</p>
             </div>
         </div>
-    </div>
-    <!-- Header End -->
 
+        <p>The Institute of Engineering and Sustainable Development (IEDS), where the Zaeon project will be based, offers undergraduate programs in Computer Engineering, Energy Engineering, and a distance-learning degree in Computer Science, as well as a graduate program (MSc) in Energy and Environment. A new graduate program in Computer Engineering and Nanotechnology is set to launch in 2026.</p>
 
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <h1 class="section-title position-relative text-center mb-5">Traditional & Delicious Ice Cream Since 1950</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 py-5">
-                    <h4 class="font-weight-bold mb-3">Our Story</h4>
-                    <h5 class="text-muted mb-3">At Arctic Delights, we believe that ice cream is more than just a dessert—it’s an experience.</h5>
-                    <p>rom our humble beginnings in a small town, we’ve grown into a beloved brand that combines premium ingredients, innovative flavors, and a passion for crafting the perfect scoop. Whether it’s a classic favorite or a daring new creation, our ice cream reflects the love and dedication we put into each batch.</p>
-                </div>
-                <div class="col-lg-4" style="min-height: 400px;">
-                    <div class="position-relative h-100 rounded overflow-hidden">
-                        <img class="position-absolute w-100 h-100" src="ice-cream1.gif" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 py-5">
-                    <h4 class="font-weight-bold mb-3">Our Mission</h4>
-                    <p>Our mission is simple: to bring joy and sweetness into every moment.</p>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Locally Sourced Ingredients</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Handcrafted in Small Batches</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Innovative Flavors</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Sustainability</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Dairy-Free & Vegan Options</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Artisanal Craftsmanship</h5>
-                </div>
-            </div>
+        <p>The project will be implemented across three campuses in the Maciço de Baturité region, a semi-arid area with over 275,000 inhabitants across 14 municipalities. These communities face challenges in access to technology, infrastructure, and economic development—making them an ideal testbed for a decentralized, value-driven educational platform like Zaeon.</p>
+
+        <div class="campus-images">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="UNILAB Campus" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="UNILAB Facilities" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="UNILAB Library" data-aos="zoom-in">
         </div>
-    </div>
-    <!-- About End -->
 
+        <p>With a strong academic structure, an inclusive mission, and technical laboratories across the Auroras and Palmares campuses, UNILAB provides a fertile ground for deploying Ethereum-based innovations that serve public institutions, promote regenerative education, and bridge global collaboration.</p>
+    </section>
 
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="section-title position-relative mb-5">Experienced & Most Famous Ice Cream Chefs</h1>
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <h2 class="team-title" data-aos="fade-up">Meet Our Team</h2>
+        <p style="text-align: center; margin-bottom: 2rem;" data-aos="fade-up">Zaeon is led by a multidisciplinary team of researchers and experts dedicated to integrating blockchain and AI technologies for social impact.</p>
+
+        <div class="team-members">
+            <div class="team-member" data-aos="fade-up">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Dr. John Hebert da Silva Felix">
+                <h3>Dr. John Hebert da Silva Felix</h3>
+                <h4>AI Systems and Blockchain Innovation</h4>
+                <p>Ph.D. and M.Sc. in Teleinformatics Engineering (UFC) and B.Sc. in Industrial Automation (IFCE). Dr. Felix is Associate Professor at the Institute of Engineering and Sustainable Development (IEDS/UNILAB) and a core faculty member of the Graduate Program in Energy and Environment.</p>
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?hl=pt-BR&user=vh_oq-8AAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="http://lattes.cnpq.br/1130453295423578" target="_blank"><i class="fas fa-id-card"></i></a>
                 </div>
-                <div class="col-lg-6 mb-5 mb-lg-0 pb-5 pb-lg-0"></div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="owl-carousel team-carousel">
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="team-1.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Chilly Charlie</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Master Ice Cream Artisan</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="team-2.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Frosty Fiona</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Frozen Dessert Connoisseur</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="team-3.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Coolhand Caleb</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Chief Ice Cream Curator</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="team-4.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Churner Chuck</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Frozen Delights Designer</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Dr. Lúcia Andréa Sindeaux de Oliveira">
+                <h3>Dr. Lúcia Andréa Sindeaux de Oliveira</h3>
+                <h4>Economics and Sustainability Modeling</h4>
+                <p>Ph.D. in Applied Economics and M.Sc. in Rural Economics (CAEN/UFC), B.Sc. in Economics (UNIFOR). Dr. Sindeaux brings extensive experience in economic development, project evaluation, and the modeling of technology adoption and sustainability.</p>
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?hl=en&user=jPF1FSYAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="http://lattes.cnpq.br/6478931807343955" target="_blank"><i class="fas fa-id-card"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Dr. Antonio Alisson Pessoa Guimarães">
+                <h3>Dr. Antonio Alisson Pessoa Guimarães</h3>
+                <h4>Data Science and Educational Technology</h4>
+                <p>Ph.D. and M.Sc. in Teleinformatics Engineering and B.Sc. in Mathematics (UFC). Dr. Guimarães has conducted advanced research in machine learning, pattern recognition, and time-series forecasting, including an international research stay at SUPÉLEC (France).</p>
+                <div class="social-links">
+                    <a href="https://scholar.google.com.br/citations?user=wkOfNhkAAAAJ&hl=pt-BR" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="http://lattes.cnpq.br/9811659182760588" target="_blank"><i class="fas fa-id-card"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Evandro de Souza Martins">
+                <h3>Evandro de Souza Martins</h3>
+                <h4>Blockchain Developer and AI Researcher</h4>
+                <p>Graduating in computer engineering with technical certification in Teleinformatics and system developments. Experience in blockchain projects for real-world assets, smart contract engineering, including institutional work and government contracts.</p>
+                <div class="social-links">
+                    <a href="http://lattes.cnpq.br/3826732791092759" target="_blank"><i class="fas fa-id-card"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Team End -->
+    </section>
 
+    <!-- Location Section -->
+    <section class="location-section" data-aos="fade-up">
+        <h2>Our Location</h2>
+        <p>The Zaeon project is being developed across multiple UNILAB campuses in the Maciço de Baturité region of Northeast Brazil, a semi-arid area with unique challenges and opportunities for technological innovation and sustainable development.</p>
+        
+        <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254936.22137885106!2d-38.83587075!3d-4.217951099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b8b9b5d10a5d59%3A0xb1b70e821eaa7f0d!2sUniversidade%20da%20Integra%C3%A7%C3%A3o%20Internacional%20da%20Lusofonia%20Afro-Brasileira!5e0!3m2!1sen!2sus!4v1711587842307!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </section>
 
-    <!-- Footer Start -->
-    <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <a href="index.html" class="navbar-brand m-0">
-                        <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">Arctic</span>Delights</h1>
-                    </a>
-                </div>
-                <div class="col-12 mb-4">
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-secondary btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <div class="col-12 mt-2 mb-4">
-                    <div class="row">
-                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                            <h5 class="font-weight-bold mb-2">Get In Touch</h5>
-                            <p class="mb-2">123 Street, Delhi, India</p>
-                            <p class="mb-0">+012 345 67890</p>
-                        </div>
-                        <div class="col-sm-6 text-center text-sm-left">
-                            <h5 class="font-weight-bold mb-2">Opening Hours</h5>
-                            <p class="mb-2">Mon – Sat, 8AM – 5PM</p>
-                            <p class="mb-0">Sunday: Closed</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved Arctic Delights</a>
-                    </p>
-                </div>
-            </div>
+    <!-- Footer Section -->
+    <section class="footer" id="footer">
+        <div>
+            <img src="https://hits.sh/zaeon.org.svg?label=Website%20Visitors&extraCount=1650&color=1E88E5&labelColor=white" alt="web-views">
         </div>
-    </div>
-    <!-- Footer End -->
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+        </div>
 
+        <div class="credit">
+            <p> Zaeon Labs <span> Inc </span> | <a href="copyright.html"> &copy;Copyright 2024 </a> | all rights reserved
+            <p>
+        </div>
+    </section>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="./darkMode.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init();
 
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate elements with GSAP
+            gsap.from(".about-section h2", { opacity: 0, y: -50, duration: 1, ease: "power2.out" });
+            gsap.from(".about-section p", { opacity: 0, y: 30, duration: 1, stagger: 0.2, ease: "power2.out" });
+            gsap.from(".team-member", { opacity: 0, y: 50, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)" });
+            
+            // Buttons hover effect
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', () => {
+                    gsap.to(button, { scale: 1.1, duration: 0.2 });
+                });
+                button.addEventListener('mouseout', () => {
+                    gsap.to(button, { scale: 1, duration: 0.2 });
+                });
+            });
+        });
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+        // Colors for the circles
+        const colors = [
+            "#1E88E5", "#2196F3", "#42A5F5", "#64B5F6", "#90CAF9", 
+            "#0D47A1", "#1565C0", "#1976D2", "#1E88E5", "#2196F3"
+        ];
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+    </script>
 </body>
 
 </html>
