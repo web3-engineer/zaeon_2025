@@ -33,6 +33,7 @@
 </script>
 
     <style>
+
         /* Styling for the pop-up Discount */
     .popup {
       display: none;
@@ -82,15 +83,62 @@
       font-size: 24px;
       margin-bottom: 10px;
     }
+
     h3{
-      font-weight: 700;
+      font-weight: 500;
     }
 
     p {
       margin-bottom: 30px;
       font-size: small;
     }
+        .home .content h3 {
+            font-size: 4.0rem;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            text-shadow:
+                    0 0 5px #1E88E5,
+                    0 0 10px #1E88E5,
+                    0 0 20px #1E88E5,
+                    0 0 40px #1E88E5;
+            animation: neon-pulse 2s ease-in-out infinite alternate;
+            letter-spacing: 2px;
+        }
 
+        @keyframes neon-pulse {
+            from {
+                text-shadow:
+                        0 0 5px #1E88E5,
+                        0 0 10px #1E88E5,
+                        0 0 20px #1E88E5,
+                        0 0 40px #1E88E5;
+            }
+            to {
+                text-shadow:
+                        0 0 5px #E91E63,
+                        0 0 10px #E91E63,
+                        0 0 20px #E91E63,
+                        0 0 40px #E91E63;
+            }
+        }
+
+        .home .content h3::after {
+            content: '目的、人工智能 和 区块链';
+            position: absolute;
+            font-size: 2.5rem;
+            bottom: 5.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fade-in 1s ease-in-out 1s forwards;
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     input[type="name"] {
       width: 100%;
       padding: 10px;
@@ -206,7 +254,9 @@
     /* Stays on top of all elements */
   }
 </style>
+
 <style>
+
   .social-icons a {
     text-decoration: none;
     color: #333; /* Default color for icons */
@@ -236,9 +286,11 @@
 
 
 </style>
+
 </head>
 
 <body>
+
    <!-- preloader -->
    <div id="preloader">
     <div class="wrapper">
@@ -297,8 +349,8 @@
 
 <a href="#home">Home</a>
 <a href="#about">About</a>
-<a href="#menu">Teachers</a>
-<a href="blog.html">Classrooms</a>
+<a href="#menu">Learning Paths</a>
+<a href="blog.html">Communities</a>
 <a href="#research">Research</a>
 </nav>
 
@@ -343,7 +395,7 @@
                 <!-- Course details will be displayed here -->
             </div>
             <div class="order-actions">
-                <button onclick="trackOrder()">Access Courses</button>
+                <button onclick="trackOrder()">Access Learning Paths</button>
                 <button onclick="editOrder()">Settings</button>
             </div>
 
@@ -364,10 +416,11 @@
     <br><br><br><br><br><br><section class="home" id="home"  data-aos="fade-up"
     data-aos-anchor-placement="top-bottom">
         <div class="content">
-            <h3>A decentralized society powered by AI and blockchain.</h3>
-            <button class="animated-button"><a href="#menu"><span>Join Zaeon!</span></a></button>
+            <h3>A Decentralized Society.</h3>
+            <button class="animated-button"><a href="#menu"><span>Become a Student</span></a></button>
         </div>
     </section>
+
     <!-- Home Section Ends Here -->
     <!--  Pop-up for Discount and Sign up Ends here  -->
      <!-- Script for pop up discount Starts Here -->
@@ -1085,7 +1138,7 @@ document.addEventListener('click', function (event) {
         <span><i class="ri-double-quotes-l"></i></span>
         <div class="card__details" >
           <p>
-            "Code your future and use programming as the board to surf the waves of life."
+            "Coding your way out of the matrix. Onboard the programming surf to go up in the waves of life."
           </p>
           <h4>- Graduated Johnny</h4>
         </div>
@@ -1097,7 +1150,7 @@ document.addEventListener('click', function (event) {
         <span><i class="ri-double-quotes-l"></i></span>
         <div class="card__details">
           <p>
-            "It is time to heal people!"
+            "Healing tomorrow starts with the knowledge of today. Empowering health through education."
           </p>
           <h4>- Medic Fox</h4>
         </div>
@@ -1111,7 +1164,7 @@ document.addEventListener('click', function (event) {
           <p>
             "Engineer solutions, sustain progress, build community. Innovation with purpose."
           </p>
-          <h4>- PhD Max</h4>
+          <h4>- Engineer Max</h4>
         </div>
       </div>
     </div>
@@ -1170,7 +1223,7 @@ document.addEventListener('click', function (event) {
     document.getElementById('user-name').value = '';
     document.getElementById('user-review').value = '';
 
-    alert('Thank you for sharing your feedback!'); // Show a success message
+    alert('Thank you for sharing your interest!'); // Show a success message
   }
 </script>
 
@@ -1209,7 +1262,7 @@ document.addEventListener('click', function (event) {
 </div>
 
         <div class="credit">
-            <p> Zaeon Labs <span> Inc </span> | <a href="copyright.html"> &copy;Copyright 2024 </a> | all rights reserved
+            <p> Zaeon Labs <span> Inc </span> | <a href="copyright.html"> &copy;Copyright 2025 </a> | Powered by FUNCAP
             <p>
         </div>
 
