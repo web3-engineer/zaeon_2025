@@ -8,7 +8,7 @@
     <title>Learn with AI</title>
     <link rel="stylesheet" href="preloaderStyle.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
+    <link rel="stylesheeet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!--Updated to latest version-->
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -348,8 +348,8 @@
 
 
 <a href="#home">Home</a>
-<a href="#menu">Learning Paths</a>
-<a href="research_lobby..html">Research Lobby</a>
+<a href="#menu">AI Hub</a>
+<a href="research_lobby..html">Research Hub</a>
 <a href="#research">What is Zaeon?</a>
 </nav>
 
@@ -394,7 +394,7 @@
                 <!-- Course details will be displayed here -->
             </div>
             <div class="order-actions">
-                <button onclick="trackOrder()">Access Learning Paths</button>
+                <button onclick="trackOrder()">Access AI Hub</button>
                 <button onclick="editOrder()">Settings</button>
             </div>
 
@@ -415,7 +415,7 @@
     <br><br><br><br><br><br><section class="home" id="home"  data-aos="fade-up"
     data-aos-anchor-placement="top-bottom">
         <div class="content">
-            <h3>{A Decentralized Society}</h3>
+            <h3> A Decentralized Society </h3>
             <button class="animated-button"><a href="#menu"><span>Become a Citizen</span></a></button>
         </div>
     </section>
@@ -563,7 +563,7 @@ document.addEventListener('click', function (event) {
         <br>
         <div class="filter-box">
 
-            <h3 id="filter-head">Filter Learning Paths</h3>
+            <h3 id="filter-head">Filter AI Teachers</h3>
             <select id="price-filter">
                 <option value="all">All Fields</option>
                 <option value="under-15">Technologies</option>
@@ -579,27 +579,24 @@ document.addEventListener('click', function (event) {
             data-aos-anchor-placement="top-bottom">
             <div class="picture">
                 <img src="images/blockchain.jpg" alt="Blockchain">
-                <h3 id="pro-name">Blockchain Fundamentals</h3>
-                <div class="flip">Learn the basics of blockchain technology, smart contracts, and the new decentralized economy with our patient AI instructor</div>
+                <h3 id="pro-name">Tech Zimar</h3>
+
+                <div class="flip">Learn the basics to advanced of technology, programming and computer science.</div>
             </div>
-                <div class="price"> $0.00 <span>20.99</span></div>
-                <button  id="inbox" onclick="addToCart('Blockchain Fundamentals', 15.99)"> Sign in </button><br>
+
+                <button  id="inbox" onclick="addToCart('Machine Learning', 0.00)">Sign In</button><br>
                 <div class="noofitems">
-              </div>
-
-
-          </div>
+                </div>
 
             <div class="box"  data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200"
             data-aos-anchor-placement="top-bottom">
             <div class="picture">
                 <img src="images/AI-fundamentals.jpg" alt="AI">
-                <h3 id="pro-name">AI Fundamentals</h3>
+                <h3 id="pro-name">Zaiany</h3>
 
-                <div class="flip">Cut through the hype and learn the real science behind AI with practical applications and ethical considerations</div>
+                <div class="flip">Larn the real science behind medicine and nursery with practical expertise </div>
             </div>
 
-                <div class="price"> $0.00 <span>20.99</span></div>
                 <button  id="inbox" onclick="addToCart('AI Fundamentals', 0.00)"> Sign In </button><br>
                 <div class="noofitems">
               </div>
@@ -613,11 +610,10 @@ document.addEventListener('click', function (event) {
             data-aos-anchor-placement="top-bottom">
                 <div class="picture">
                     <img src="images/machine-learning.jpg" alt="Machine Learning">
-                  <h3 id="pro-name">Machine Learning</h3>
-                    <div class="flip">Master the fundamental algorithms and techniques in machine learning with hands-on projects and real-world applications</div>
+                  <h3 id="pro-name">Zaeonaut</h3>
+                    <div class="flip">Master the fundamental knowledge of be smart in a really messed up world.</div>
                 </div>
 
-                <div class="price"> $0.00 <span>20.99</span></div>
                 <button  id="inbox" onclick="addToCart('Machine Learning', 0.00)">Sign In</button><br>
                 <div class="noofitems">
 </div>
@@ -1275,7 +1271,7 @@ document.addEventListener('click', function (event) {
     </script>
 
 
-    <script src="./darkMode.js"></script>
+    <script src="js/darkMode.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
